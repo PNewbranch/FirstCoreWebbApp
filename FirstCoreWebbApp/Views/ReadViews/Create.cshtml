@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+
+@*asp vontroll action pekar ut längken dit man skickar till - hur man riktar en form var den skall posta någon stans
+method post är vilken requesttyp jag skickar*@
+
+<form asp-action="Create" asp.controller="reviews" method="post">
+
+    @*här skall vi en input från användaren av typen text *@
+    <input type="text" name="info" value="" placeholder="Review info" />
+
+    <span>@ViewBag.Msg</span>
+
+    @*skicka - använd en submittknapp - skickas sedan upp till den url:en som vi pekar ut ovan*@
+    <input type="submit" value="Save" />
+
+</form>
+
+
+
+
+@*<form method="post">
+</form>*@
+

@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "MathTable";
+    //ViewBag.Title = "MathTable";   same same but different, båda funkar
+}
+
+<h1>MathTable</h1>
+
+<table>
+    @for (int y = 1; y <= 10; y++)
+    {
+        <tr>
+            @for (int x = 1; x <= 10; x++)
+            {
+                <td>
+                    @(y*x)   @*sätts i parentes för att bli grått c#kod  - ses som en operation*@
+                </td>
+            }
+        </tr>
+    }
+</table>

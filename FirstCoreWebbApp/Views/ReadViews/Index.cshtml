@@ -1,0 +1,44 @@
+﻿@using FirstCoreWebbApp.Models;
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Reviews Index</h1>
+
+<a asp-action="Create">Create</a>
+
+table som loopar på viewbagen - denna kommer ut som kommentar eftersom vi inte har razorcommentar - vi har en yttre if-sats som kontrollerar att ViwBagen inte är tom !=null
+<table>
+
+    @*//sedan lades denna till som omsluter första - notera va noga med stavning eftersom viewbags inte ger ingen hjälp för felstavning*@
+    @if (ViewBag.ReviewList != null)
+    {
+
+        //först skapade denna - skulle inte varit size utan count även här
+        @*@for (int i = 0; i < ViewBag.ReviewListSize(); i++)*@
+
+        //sen byter vi ovan rad med denna
+        @*@for (int i = 0; i < ((List<string>)ViewBag.ReviewList).Count; i++)*@
+
+        //byter ovan rad med nedan
+        @for (int i = 0; i < ((List<Review>)ViewBag.ReviewList).Count; i++)
+        {
+
+            <tr>
+                @*<td>@ViewBag.ReviewList[i]</td>*@
+
+                @*//ersätter ovan med de två nedan - här använder vi typecasting*@
+
+                <td>@(((Review)ViewBag.ReviewList[i]).Id)</td>
+                <td>@(((Review)ViewBag.ReviewList[i]).Info)</td>
+
+            </tr>
+        }
+
+    }
+
+
+
+</table>

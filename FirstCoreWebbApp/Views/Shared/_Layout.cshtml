@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />  @*här drag and droppar vi stylesheet hit - på så sätt kopplar vi bort wwwroots index.html*@
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li>
+                @*Hitta routern som går till index i home*@
+                <a href="@Url.Action("Index", "Home")">Index</a>   @*hjälpreda, vill ha url:e till en action - vill h action och controller - skall BARA användas där man är people när man är i people, car när man är i car*@
+            </li>
+
+            <li>
+                @Html.ActionLink("Math Table", "MathTable", "Home")
+            </li>
+
+            <li>
+                <a asp-action="Contact" asp-controller="Home">Contact</a>
+            </li>
+
+            <li>
+                <a asp-action="Index" asp-controller="ReadViews">Reviews</a>
+            </li>
+
+
+        </ul>
+    </nav>
+   
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @*detta är tillagt - (kommentarer ser ut så här i MVC*@
+    <footer> 
+        <p>Peter &copy; @DateTime.Now.Year</p>
+    </footer>
+
+</body>
+</html>
