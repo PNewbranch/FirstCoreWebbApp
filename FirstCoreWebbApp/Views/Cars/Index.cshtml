@@ -1,0 +1,27 @@
+﻿@*@model List<FirstCoreWebbApp.Models.Car>*@  @*lagt till denna, men den kan kortas ner *@
+                                              @*skall finnas i controllern och i viewreport*@
+
+
+@model List<Car>
+
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<a asp-action="Create"> Create Car </a>     @*//går tillbaka till våran createview*@
+
+
+<div>
+
+    @foreach (Car aCar in Model)        @*Använder datamodeller för att visa information på sidan//anv i uppgifte 456*@
+    {
+    <div id="@("carId" + aCar.Id)">
+        <p>Brand: @aCar.Brand</p>
+        <p>Model: @aCar.ModelName</p>
+    </div>
+    }
+
+</div>

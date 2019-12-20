@@ -4,17 +4,21 @@
 <head>
     <meta name="viewport" content="width=device-width" />
 
-    <link href="~/css/StyleSheet.css" rel="stylesheet" />  @*här drag and droppar vi stylesheet hit - på så sätt kopplar vi bort wwwroots index.html*@
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />  
+    @*här drag and droppar vi stylesheet hit - på så sätt kopplar vi bort wwwroots index.html*@
 
     <title>@ViewBag.Title</title>
 </head>
 <body>
 
-    <nav>
+    <nav>           
+    @*//routing här är att vi mappar till rätt url - där vi laddar rätt viewer*@
+
         <ul>
             <li>
                 @*Hitta routern som går till index i home*@
-                <a href="@Url.Action("Index", "Home")">Index</a>   @*hjälpreda, vill ha url:e till en action - vill h action och controller - skall BARA användas där man är people när man är i people, car när man är i car*@
+                <a href="@Url.Action("Index", "Home")">Index</a>   
+                @*hjälpreda, vill ha url:e till en action - vill h action och controller - skall BARA användas där man är people när man är i people, car när man är i car*@
             </li>
 
             <li>
@@ -29,6 +33,13 @@
                 <a asp-action="Index" asp-controller="ReadViews">Reviews</a>
             </li>
 
+            <li>
+                <a asp-action="LookAt" asp-controller="Sessions">Sessions</a>
+            </li>
+
+            <li>
+                <a asp-action="Index" asp-controller="Cars">Cars</a>
+            </li>
 
         </ul>
     </nav>

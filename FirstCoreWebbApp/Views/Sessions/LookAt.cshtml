@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "LookAt";
+}
+
+<h1>LookAt</h1>
+
+@if (ViewBag.Msg != null)
+{
+    <h3>@ViewBag.Msg</h3>
+}
+else
+{
+    <h3>Session is empty</h3>
+}
+
+
+@*så länge den här session är igång så får gissa - en gissning pågår i 10 minuter innan man får börjar om från början... kan då inte testa testa testa för att sedan få ett higscore*@
+<form asp-action="SaveSession" method="post">
+    <input type="text" name="message" value="" />
+    <input type="submit" value="Save in Session" />
+</form>

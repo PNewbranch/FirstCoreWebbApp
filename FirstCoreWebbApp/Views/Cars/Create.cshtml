@@ -1,0 +1,21 @@
+﻿@model CarViewModel   
+@*//Vi använder modell i detta fall, denna måste därför läggas till*@
+
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create Car</h1>  @*//modellen vi vill använda här är Car*@
+
+<form method="post">        @*//märkväl har inte med ID - de skall inte användaren göra.. utan det skall servern göra*@
+
+    <label asp-for="Brand"></label>
+    <input asp-for="Brand" />
+
+    <label asp-for="ModelName"></label>
+    <input asp-for="ModelName" />
+
+    <input type="submit" value="Add Car" />
+
+</form>
